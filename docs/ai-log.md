@@ -140,3 +140,49 @@
    6. Таблиця відповідності файлів ролям: agent -> .github/agents/, skills -> .github/skills/, commands -> .github/prompts/.
    7. Примітка, що використано формат VS Code Copilot (custom agents, prompt files, agent skills).
    ```
+14. ```text
+   Створи (або, якщо файл уже є, повністю перегенеруй) docs/ai-log.md: нумерований список усіх запитів, які я надсилав тобі в цьому чаті, від першого повідомлення до останнього, по порядку.
+   Кожен запит перепиши дослівно, як я його надсилав, нічого не скорочуй і не виправляй. Відповіді в файл не записуй. Без заголовків, вступу, висновку і пояснень, тільки список: 1., 2., 3. і так далі.
+   Включи всі мої повідомлення, зокрема повторні запити та запити на виправлення помилок. Поточний запит (про створення цього журналу) не включай. Якщо в якомусь запиті є паролі, токени чи ключі, заміни їх на [приховано] і скажи мені про це.
+   ```
+15. ```text
+   Follow instructions in #prompt:init.prompt.md with these arguments: дав таку помилку:Выполнение `/init` остановлено на шаге 2, `create-project`, как предписывает оркестратор. `hello.py` запускается и печатает `Hello, World!`, оба исходных файла существуют. Но `docs` уже содержит `architecture.md` и `ai-log.md`, а существующий README отличается от минимального шаблона skill. Я сохранил оба без изменений; поэтому scaffold нельзя считать полностью соответствующим требованиям.
+
+   Шаг
+   Статус
+   Созданные/изменённые файлы
+
+   1. git-init
+   PASSED
+   `.gitignore`
+
+   2. create-project
+   FAILED
+   `add.py`, `hello.py`, пустой каталог `tests`
+
+   3. create-build
+   SKIPPED
+   —
+
+   4. create-actions
+   SKIPPED
+   —
+
+   5. check
+   SKIPPED
+   —
+
+   Чтобы продолжить, нужно разрешить конфликт требований к непустому `docs` и существующему README либо изменить правила scaffold. Общий статус: **FAILED**.. Проаналізуй причину і виправ ІНСТРУКЦІЇ в .github/skills/[...] або .github/prompts/[...], щоб агент генерував правильно. Не правь згенеровані файли напряму.
+   ```
+16. ```text
+   Follow instructions in #prompt:check.prompt.md
+   ```
+17. ```text
+   .\ci.bat (PowerShell на Windows)
+   ```
+18. ```text
+   git  status
+   ```
+19. ```text
+   Створи docs/usage.md: точні команди запуску агента (VS Code, Copilot Chat, агент build-engineer, /init, /check), локальної збірки і перевірки (./ci.sh на Linux/macOS, ci.bat на Windows), запуску hello (python3 dist/hello.py або python dist\hello.py; також ./run.sh або run.bat), запуску тестів (.venv/bin/python -m pytest -v на Linux/macOS, .venv\Scripts\python -m pytest -v на Windows).
+   ```
